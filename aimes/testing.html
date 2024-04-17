@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/contactus.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="preconnect" href="hhtps://fonts.gastatic.com">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <title>AIMES</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #333;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  color: #fff;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.links {
+  display: flex;
+  list-style: none;
+}
+
+.links li {
+  padding: 0 15px;
+}
+
+.links a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+
+.links a:hover {
+  color: #ccc;
+}
+
+.toggle_btn {
+  color: #fff;
+  font-size: 2rem;
+  display: none;
+}
+
+@media (max-width: 768px) {
+ .links {
+    display: none;
+  }
+
+ .toggle_btn {
+    display: block;
+    cursor: pointer;
+  }
+
+ .navbar.open.links {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    flex-direction: column;
+  }
+
+ .navbar.open.links li {
+    padding: 15px;
+  }
+
+ .navbar.open.links a {
+    color: #fff;
+  }
+}
+
+.back-video {
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+@media (max-width: 768px) {
+ .back-video {
+    height: 50vh;
+    object-fit: cover;
+    width: 100%;
+  height: 100vh;
+  }
+}
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <div class="loader"></div>
+  </div>
+  <main>
+    <div  class="navbar" data-aos="fade-right" data-aos-duration ="1000" data-aos-delay="100">
+      <div class="logo"><a href="home.html">Aimes</a></div>
+      <ul class="links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="aboutus.html">About us</a></li> 
+        <li><a href="service.html">Services</a></li>
+      </ul>
+      <a href="contactus.html" class="action-btn">Contact Us</a>
+      <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+    <div  class="dropdown_menu" >
+      <li><a href="home.html">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="service.html">Our Services</a></li>
+      <li> <a href="contactus.html" class="action-btn">Contact Us</a></li>
+    </div>
+    <section data-aos="fade-right" data-aos-duration ="1000" data-aos-delay="100">
+      <video autoplay loop muted plays-inline class="back-video">
+        <source src="Video/video5.mp4" type="video/mp4">
+      </video>
+      <h1>WELCOME</h1>
+      <p>"Experience seamless convenience and unparalleled expertise with our premium service, <br>
+        dedicated to exceeding your expectations and delivering solutions tailored to your unique needs."</br>
+      <div><button type="button" class="h-btn">About Us</button>
+        <button type="button" class="h-btn">Learn More</button>
+      </div>
+      
+    </section>
+  </main>
+  
+  <!-- FOOTER =-->
+  <footer  class="footer" data-aos="fade-right" data-aos-duration ="1000" data-aos-delay="100">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>company</h4>
+          <ul>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="service.html">Our services</a></li>
+
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>get help</h4>
+          <ul>
+            <li><a href="contactus.html">contact Us</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/"><i class="bx bxl-facebook-circle"></i></a>
+            <a href="https://twitter.com/i/flow/login"> <i class="bx bxl-twitter"></i></a>
+            <a href="https://www.instagram.com/"><i class="bx bxl-instagram-alt"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const toggleBtn = document.querySelector('.toggle_btn')
+      const toggleBtnIcon = document.querySelector('.toggle_btn i')
+      const dropDownMenu = document.querySelector('.dropdown_menu')
+
+      toggleBtn.onclick = function () {
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+
+        toggleBtnIcon.classList = isOpen
+         ? 'fa-solid fa-xmark'
+          : 'fa-solid fa-bars'
+      }
+    </script>
+     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+     <script>
+       AOS.init();
+     </script>
+      <script>
+        window.onload = function() {
+          document.getElementById('loading').style.display = 'none';
+        }
+      </script>
+  </footer>
+</body>
+
+</html>
